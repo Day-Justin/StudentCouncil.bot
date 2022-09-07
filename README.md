@@ -1,5 +1,5 @@
 # StudentCouncil
-The Law
+I am the Law
 
 Current Objectives
 
@@ -16,6 +16,7 @@ Current Objectives
 - [] dictionary lookup
 - [] list commands/ help tagged commands
 - [] random cat pics
+- [] music
 
 Real person Authentication:
 
