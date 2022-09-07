@@ -1,5 +1,6 @@
 # A moderate moderation Bot
 
+
 import discord
 from discord.ext import commands
 import os
@@ -12,7 +13,8 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
 
-with open(os.path.dirname(__file__) + 'config.json') as f:
+
+with open('../config.json') as f:
     data = json.load(f)
     PREFIX = data["StudentCouncil"]["PREFIX"]
 
@@ -20,13 +22,12 @@ with open(os.path.dirname(__file__) + 'config.json') as f:
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
-handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+handler = logging.FileHandler(filename='../discord.log', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s: %(levelname)s: %(name)s: %(message)s'))
 logger.addHandler(handler)
 
 
-intents = discord.Intents.all()
-client = discord.Client(intents=intents)
+client = discord.Client()
 bot = commands.Bot(command_prefix=PREFIX)
 
 
