@@ -5,6 +5,7 @@ import os
 import json
 from dotenv import load_dotenv
 import GirlDeMo as Music
+import Secretary as Helper
 
 
 load_dotenv()
@@ -21,9 +22,11 @@ with open('../config.json') as f:
 client = commands.Bot(command_prefix=PREFIX, intents=nextcord.Intents.all())
 
 
-cogs = [Music]
+cogs = [Music, Helper]
 for cog in cogs:
     cog.setup(client)
+
+client.remove_command('help')
 
 
 @client.event

@@ -25,7 +25,7 @@ with open('../config.json') as f:
 
 
 client = commands.Bot(command_prefix=PREFIX, intents=intents)
-bot_channel = 797357086236213258
+bot_channel = 797357086236213258   # general
 
 
 @client.event
