@@ -1,8 +1,10 @@
+# A bot that does everything (hopefully)
 import nextcord
 from nextcord.ext import commands
 import os
 import json
 from dotenv import load_dotenv
+import GirlDeMo as Music
 
 
 load_dotenv()
@@ -16,7 +18,12 @@ with open('../config.json') as f:
     PREFIX = data["StudentCouncil"]["PREFIX"]
 
 
-client = commands.Bot(command_prefix=PREFIX, intents=intents)
+client = commands.Bot(command_prefix=PREFIX, intents=nextcord.Intents.all())
+
+
+cogs = [Music]
+for cog in cogs:
+    cog.setup(client)
 
 
 @client.event
